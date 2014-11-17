@@ -43,11 +43,11 @@ sensu_api_endpoints:
     user: ''
     pass: ''
     path: ''
-    timeout: 5000
+    timeout: 5
 
 # Default uchiwa config
 host: 0.0.0.0
 port: 3000
 user: ''
 pass: ''
-refresh: 10000
+refresh: 5
