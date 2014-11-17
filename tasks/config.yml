@@ -1,0 +1,11 @@
+# Configuration for Uchiwa
+---
+
+- name: Create configuration file for uchiwa
+  template:
+    src=uchiwa.json.j2
+    dest=/etc/sensu/uchiwa.json
+    owner=uchiwa
+    group=uchiwa
+  notify:
+    - restart uchiwa

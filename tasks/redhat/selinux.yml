@@ -1,0 +1,7 @@
+# Installs libselinux-python if target is RedHat box
+---
+
+- name: Install libselinux-python
+  yum:
+    name=libselinux-python
+    state=present

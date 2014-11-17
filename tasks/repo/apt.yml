@@ -1,0 +1,11 @@
+---
+- name: "Add the sensu repository's public key"
+  apt_key:
+    url={{ sensu_apt_repo_key_url }}
+    state=present
+    id={{ sensu_apt_repo_key_id }}
+
+- name: Add the official sensu repository
+  apt_repository:
+    repo='deb {{ sensu_apt_repo_url }} {{ sensu_apt_repo_distribution }} {{ sensu_apt_repo }}'
+    state=present 

@@ -1,0 +1,21 @@
+# Central role file for uchiwa
+---
+
+# Initial system checks
+- name: Checking OS family is supported
+  fail: msg='Unfortunately {{ ansible_os_family }}-like operating systems are not supported by this role.'
+  when: ansible_os_family not in supported_os_families
+
+# Install sensu/uchiwa repo
+- name: Install sensu apt repo
+  include: repo/apt.yml
+  when: install_repo and ansible_os_family == 'Debian'
+
+- include: repo/yum.yml
+  when: install_repo and ansible_os_family == 'RedHat'
+
+# Install uchiwa
+- include: install.yml
+
+# Configure uchiwa
+- include: config.yml

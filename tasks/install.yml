@@ -1,0 +1,16 @@
+# Install uchiwa
+---
+
+- name: Install uchiwa on Debian systems
+  apt:
+    name="{{ uchiwa_apt_pkg }}{{'=' + version if not version in ['installed','latest'] else '' }}"
+    state={{ 'latest' if version == 'latest' else 'present' }}
+    update_cache=yes
+    force=yes
+  when: ansible_os_family == 'Debian'
+
+- name: Install uchiwa on RedHat systems
+  yum:
+    name="{{ uchiwa_yum_pkg }}{{'-' + version if not version in ['installed','latest'] else '' }}"
+    state={{ 'latest' if version == 'latest' else 'present' }}
+  when: ansible_os_family == 'RedHat'
