@@ -1,3 +1,5 @@
+[![ansible-uchiwa](https://travis-ci.org/queeno/ansible-uchiwa.png?branch=master)](https://travis-ci.org/queeno/ansible-uchiwa)
+
 # Ansible-Uchiwa
 
 Ansible role for installing and configuring [Uchiwa](https://uchiwa.io), the open-source sensu dashboard.
