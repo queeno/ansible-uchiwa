@@ -19,3 +19,7 @@
 
 # Configure uchiwa
 - include: config.yml
+
+# Configure Nginx
+- include: nginx.yml
+  when: uchiwa_nginx_config_enabled
