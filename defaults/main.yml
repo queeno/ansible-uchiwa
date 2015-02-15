@@ -51,3 +51,7 @@ uchiwa_port: 3000
 uchiwa_user: ''
 uchiwa_pass: ''
 uchiwa_refresh: 5
+
+# Setup Nginx config?
+uchiwa_nginx_config_enabled: true
+uchiwa_nginx_server_name: localhost
