@@ -7,7 +7,7 @@ before_install:
 
 install:
   # Install Ansible.
-  - pip install ansible==1.7.2
+  - pip install ansible==1.9.2
 
   # Create an inventory file for testing.
   - "echo 'uchiwa-standalone ansible_ssh_host=localhost' > inventory"
