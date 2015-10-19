@@ -10,11 +10,11 @@ supported_os_families:
 install_repo: true
 
 # The sensu APT repo params
-sensu_apt_repo_url: 'http://repos.sensuapp.org/apt'
+sensu_apt_repo_url: 'http://repositories.sensuapp.org/apt'
 sensu_apt_repo_distribution: sensu
 sensu_apt_repo: main
-sensu_apt_repo_key_url: 'http://repos.sensuapp.org/apt/pubkey.gpg'
-sensu_apt_repo_key_id: 7580C77F
+sensu_apt_repo_key_url: 'http://repositories.sensuapp.org/apt/pubkey.gpg'
+sensu_apt_repo_key_id: EB9C94BB
 
 # The sensu YUM repo params
 # 'sensu': installs the stable sensu repo
