@@ -1,17 +1,16 @@
 {
   "sensu": [
-{% set default_endpoint = defaults.sensu_api_endpoints[0] %}
 {% for endpoint in sensu_api_endpoints %}
     {
-      "name": "{{ endpoint['name'] | default(default_endpoint['name'], true) }}",
-      "host": "{{ endpoint['host'] | default(default_endpoint['host'], true) }}",
-      "ssl": {{ (endpoint['ssl'] | default(default_endpoint['ssl'], true)) | lower }},
-      "insecure": {{ (endpoint['insecure'] | default(default_endpoint['insecure'], true)) | lower }},
-      "port": {{ endpoint['port'] | default(default_endpoint['port'], true) }},
-      "user": "{{ endpoint['user'] | default(default_endpoint['user'], true) }}",
-      "pass": "{{ endpoint['pass'] | default(default_endpoint['pass'], true) }}",
-      "path": "{{ endpoint['path'] | default(default_endpoint['path'], true) }}",
-      "timeout": {{ endpoint['timeout'] | default(default_endpoint['timeout'], true) }}
+      "name": "{{ endpoint['name'] | default(sensu_default_endpoint['name'], true) }}",
+      "host": "{{ endpoint['host'] | default(sensu_default_endpoint['host'], true) }}",
+      "ssl": {{ (endpoint['ssl'] | default(sensu_default_endpoint['ssl'], true)) | lower }},
+      "insecure": {{ (endpoint['insecure'] | default(sensu_default_endpoint['insecure'], true)) | lower }},
+      "port": {{ endpoint['port'] | default(sensu_default_endpoint['port'], true) }},
+      "user": "{{ endpoint['user'] | default(sensu_default_endpoint['user'], true) }}",
+      "pass": "{{ endpoint['pass'] | default(sensu_default_endpoint['pass'], true) }}",
+      "path": "{{ endpoint['path'] | default(sensu_default_endpoint['path'], true) }}",
+      "timeout": {{ endpoint['timeout'] | default(sensu_default_endpoint['timeout'], true) }}
     }{{ ',' if loop.index < sensu_api_endpoints|length else '' }}
 {% endfor %}
   ],

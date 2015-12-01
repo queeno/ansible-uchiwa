@@ -33,17 +33,19 @@ uchiwa_apt_pkg: uchiwa
 # Uchiwa package name for RedHat systems
 uchiwa_yum_pkg: uchiwa
 
+sensu_default_endpoint:
+  name: sensu
+  host: 127.0.0.1
+  ssl: false
+  insecure: true
+  port: 4567
+  user: ''
+  pass: ''
+  path: ''
+  timeout: 5
+
 # Default sensu API endpoint
-sensu_api_endpoints:
-  - name: sensu
-    host: 127.0.0.1
-    ssl: false
-    insecure: true
-    port: 4567
-    user: ''
-    pass: ''
-    path: ''
-    timeout: 5
+sensu_api_endpoints: [ '{{ sensu_default_endpoint] }}' ]
 
 # Default uchiwa config
 host: 0.0.0.0
