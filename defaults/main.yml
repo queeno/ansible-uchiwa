@@ -45,7 +45,7 @@ sensu_default_endpoint:
   timeout: 5
 
 # Default sensu API endpoint
-sensu_api_endpoints: [ '{{ sensu_default_endpoint] }}' ]
+sensu_api_endpoints: [ '{{ sensu_default_endpoint }}' ]
 
 # Default uchiwa config
 host: 0.0.0.0
