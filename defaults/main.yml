@@ -55,3 +55,5 @@ port: 3000
 user: ''
 pass: ''
 refresh: 5
+users: []
+auth: {}
