@@ -94,7 +94,7 @@ Please specify the following keys for each element of `users`:
 |`password`  |String       |The password to access uchiwa dashboard   |   |
 |`readonly`  |Boolean      |Should the user have read only access?    |false  |
 
-<sup>6</sup> `auth` specifies the public and private keys for JTW validation and signing. If this hash is omitted, then uchiwa will generate its own keys on start behind the scenes. For this reason, there are no defaults.
+<sup>6</sup> `auth` specifies the public and private keys for JTW validation and signing. If this hash is omitted, then uchiwa will generate its own keys on start behind the scenes. For this reason, all fields are mandatory if variable is declared.
 
 Please populate the `auth` hash with the following values:
 
