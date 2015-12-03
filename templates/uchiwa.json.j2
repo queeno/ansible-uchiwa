@@ -27,7 +27,7 @@
         "username": "{{ user['username'] }}",
         "password": "{{ user['password'] }}",
         "role": {
-          "readonly": {{ user['readonly'] | lower | default(false) }}
+          "readonly": {{ user['readonly'] | default(false) | lower }}
         }
       }{{ ',' if loop.index < users|length else '' }}
 {% endfor %}
