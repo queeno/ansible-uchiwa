@@ -52,6 +52,7 @@ These variables are defined in `defaults/main.yml`. Please overwrite if you have
 |`user`                       |String           |The username to access uchiwa dashboard       |'' *(empty for none)*              |
 |`pass`                       |String           |The password to access uchiwa dashboard       |'' *(empty for none)*              |
 |`refresh`                    |Integer          |The interval to pull the sensu APIs (in seconds)|5                             |
+|`users`                      |List of hashes   |Multiple user credentials to access uchiwa dashhboard|Please see <sup>5</sup>      |
 
 ### Footnotes
 
@@ -80,6 +81,17 @@ You don't need to overwrite all the hash keys in the array. If you don't pass a 
 |`pass`      |String       |The password of the sensu API endpoint        | '' *(empty for none)* |
 |`path`      |String       |The path to the sensu API endpoint            | '' *(empty for none)* |
 |`timeout`   |Integer      |Timeout of the sensu API endpoint in seconds  | 5                     |
+
+<sup>5</sup> `users` specifies a list of user credentials to access the uchiwa dashboard. This feature is available from uchiwa 0.10.0.
+`users` has precedence over `user`. If left empty or omitted the `user` and `password` values will be used instead.
+
+Please specify the following keys for each element of `users`:
+
+|Name        |Type         |Description       |Default            |
+|------------|-------------|------------------|-------------------|
+|`username`  |String       |The username to access uchiwa dashboard   |   |
+|`password`  |String       |The password to access uchiwa dashboard   |   |
+|`readonly`  |Boolean      |Should the user have read only access?    |false  |
 
 ## Files required
 

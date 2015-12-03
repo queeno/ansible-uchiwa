@@ -19,6 +19,19 @@
     "port": {{ port }},
     "user": "{{ user }}",
     "pass": "{{ pass }}",
-    "refresh": {{ refresh }}
+    "refresh": {{ refresh }}{{ ',' if users else '' }}
+{% if users %}
+    "users": [
+{% for user in users %}
+      {
+        "username": "{{ user['username'] }}",
+        "password": "{{ user['password'] }}",
+        "role": {
+          "readonly": {{ user['readonly'] | lower | default(false) }}
+        }
+      }{{ ',' if loop.index < users|length else '' }}
+{% endfor %}
+    ]
+{% endif %}
   }
 }
