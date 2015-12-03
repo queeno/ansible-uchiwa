@@ -19,7 +19,7 @@
     "port": {{ port }},
     "user": "{{ user }}",
     "pass": "{{ pass }}",
-    "refresh": {{ refresh }}{{ ',' if users else '' }}
+    "refresh": {{ refresh }}{{ ',' if users or auth else '' }}
 {% if users %}
     "users": [
 {% for user in users %}
@@ -31,7 +31,13 @@
         }
       }{{ ',' if loop.index < users|length else '' }}
 {% endfor %}
-    ]
+    ]{{ ',' if auth else '' }}
+{% endif %}
+{% if auth %}
+    "auth": {
+      "privatekey": "{{ auth['privatekey'] }}",
+      "publickey": "{{ auth['publickey'] }}"
+    }
 {% endif %}
   }
 }

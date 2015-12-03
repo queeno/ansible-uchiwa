@@ -53,6 +53,7 @@ These variables are defined in `defaults/main.yml`. Please overwrite if you have
 |`pass`                       |String           |The password to access uchiwa dashboard       |'' *(empty for none)*              |
 |`refresh`                    |Integer          |The interval to pull the sensu APIs (in seconds)|5                             |
 |`users`                      |List of hashes   |Multiple user credentials to access uchiwa dashhboard|Please see <sup>5</sup>      |
+|`auth`                       |Hash             |Contains the path to the private and public keys for JWT validation|Please see <sup>6</sup>      |
 
 ### Footnotes
 
@@ -92,6 +93,15 @@ Please specify the following keys for each element of `users`:
 |`username`  |String       |The username to access uchiwa dashboard   |   |
 |`password`  |String       |The password to access uchiwa dashboard   |   |
 |`readonly`  |Boolean      |Should the user have read only access?    |false  |
+
+<sup>6</sup> `auth` specifies the public and private keys for JTW validation and signing. If this hash is omitted, then uchiwa will generate its own keys on start behind the scenes. For this reason, there are no defaults.
+
+Please populate the `auth` hash with the following values:
+
+|Name       |Type          |Description       |Default            |
+|-----------|--------------|------------------|-------------------|
+|`privatekey`|String       |Path to the private key|              |
+|`publickey` |String       |Path to the public key |              |
 
 ## Files required
 
