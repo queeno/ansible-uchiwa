@@ -7,5 +7,6 @@
     dest=/etc/sensu/uchiwa.json
     owner=uchiwa
     group=uchiwa
+    mode=0640
   notify:
     - restart uchiwa
