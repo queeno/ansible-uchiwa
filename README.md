@@ -25,7 +25,7 @@ This role is tested on ubuntu/precise64 and centos/6.5 OSes. For more informatio
 You can use [ansible-galaxy](https://galaxy.ansible.com/list#/roles/2192):
 
 ```
-$ ansible-galaxy install queeno.ansible-uchiwa
+$ ansible-galaxy install queeno.uchiwa
 ```
 
 ## Role default variables
