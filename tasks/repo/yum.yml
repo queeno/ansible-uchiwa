@@ -2,10 +2,10 @@
 
 - include: ../redhat/selinux.yml
   when: not ansible_selinux
- 
+
 - name: Add the official sensu repository
   copy:
     src='../../files/{{ sensu_yum_repo }}.repo'
     dest='/etc/yum.repos.d'
     owner=root
-    group=root 
+    group=root
