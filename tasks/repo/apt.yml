@@ -8,4 +8,4 @@
 - name: Add the official sensu repository
   apt_repository:
     repo='deb {{ sensu_apt_repo_url }} {{ sensu_apt_repo_distribution }} {{ sensu_apt_repo }}'
-    state=present 
+    state=present
