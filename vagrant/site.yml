@@ -1,2 +1,2 @@
 ---
-- include: standalone.yml
+- import_playbook: standalone.yml

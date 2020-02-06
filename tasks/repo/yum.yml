@@ -1,6 +1,6 @@
 ---
 
-- include: ../redhat/selinux.yml
+- import_tasks: ../redhat/selinux.yml
   when: not ansible_selinux
 
 - name: Add the official sensu repository

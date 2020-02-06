@@ -1,5 +1,0 @@
-[sensu-unstable]
-name=sensu-unstable
-baseurl=http://repositories.sensuapp.org/yum-unstable/$basearch/
-gpgcheck=0
-enabled=1

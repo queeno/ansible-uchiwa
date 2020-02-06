@@ -1,12 +1,12 @@
 machines = {
   'debian'  =>  {
                   'ip'          => '192.168.33.2',
-                  'box'         => 'ubuntu/trusty64',
+                  'box'         => 'ubuntu/xenial64',
                   'local_port'  => '8080',
                 },
   'redhat'  =>  {
                   'ip'          => '192.168.33.3',
-                  'box'         => 'bento/centos-7.1',
+                  'box'         => 'bento/centos-8',
                   'local_port'  => '8081',
                 }
 }
@@ -26,7 +26,6 @@ Vagrant.configure('2') do |config|
           'redhat' => ['redhat-standalone']
         }
         ansible.limit = "#{vm}"
-        ansible.sudo = true
         ansible.host_key_checking = false
       end
     end

@@ -1,5 +1,5 @@
 [sensu]
-name=sensu-main
-baseurl=http://repositories.sensuapp.org/yum/$releasever/$basearch/
+name=sensu
+baseurl=https://sensu.global.ssl.fastly.net/yum/7/$basearch/
 gpgcheck=0
 enabled=1

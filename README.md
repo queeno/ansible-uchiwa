@@ -37,11 +37,11 @@ These variables are defined in `defaults/main.yml`. Please overwrite if you have
 |-----------------------------|-----------------|----------------------------------------------|--------------------------------|
 |`supported_os_families`      |List of strings  |Supported OS families by the role             |['Debian','RedHat']             |
 |`install_repo`               |Boolean          |Determines whether to install sensu repo      |True                            |
-|`sensu_apt_repo_url`         |String           |Sensu APT repository URL                      |'http://repos.sensuapp.org/apt' |
-|`sensu_apt_repo_distribution`|String           |Sensu APT repository distribution             |'sensu'                         |
+|`sensu_apt_repo_url`         |String           |Sensu APT repository URL                      |'https://sensu.global.ssl.fastly.net/apt' |
+|`sensu_apt_repo_distribution`|String           |Sensu APT repository distribution             |'{{ ansible_distribution_release }}'                         |
 |`sensu_apt_repo`             |String           |Sensu APT repository name                     |'main'                          |
 |`sensu_apt_repo_key_url`     |String           |Sensu APT repository key URL                  |Please see <sup>1</sup>|
-|`sensu_apt_repo_key_id`      |String           |Sensu APT repository key ID                   |'7580C77F'                      |
+|`sensu_apt_repo_key_id`      |String           |Sensu APT repository key ID                   |'EB9C94BB'                      |
 |`sensu_yum_repo`             |String           |Determines which YUM sensu repo to install <sup>2</sup> |'sensu'                         |
 |`version`                    |String           |Determines the uchiwa version to install <sup>3</sup> |'installed'                     |
 |`uchiwa_apt_pkg`             |String           |The uchiwa package name for Debian systems    |'uchiwa'                        |
@@ -132,8 +132,8 @@ The `vagrant up` command will trigger a `standalone.yml` ansible-playbook run th
 
 You can also spin up a specific vm:
 
-`vagrant up debian` spins up *hashicorp/precise64*
-`vagrant up redhat` spins up *chef/centos-6.5*
+`vagrant up debian` spins up *ubuntu/xenial64*
+`vagrant up redhat` spins up *bento/centos-8*
 
 ### Acceptance Tests
 
