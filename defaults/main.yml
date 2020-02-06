@@ -10,10 +10,10 @@ supported_os_families:
 install_repo: true
 
 # The sensu APT repo params
-sensu_apt_repo_url: 'http://repositories.sensuapp.org/apt'
-sensu_apt_repo_distribution: sensu
+sensu_apt_repo_url: 'https://sensu.global.ssl.fastly.net/apt'
+sensu_apt_repo_distribution: "{{ ansible_distribution_release }}"
 sensu_apt_repo: main
-sensu_apt_repo_key_url: 'http://repositories.sensuapp.org/apt/pubkey.gpg'
+sensu_apt_repo_key_url: 'https://sensu.global.ssl.fastly.net/apt/pubkey.gpg'
 sensu_apt_repo_key_id: EB9C94BB
 
 # The sensu YUM repo params

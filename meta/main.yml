@@ -58,11 +58,7 @@ galaxy_info:
   #  - maverick
   #  - natty
   #  - oneiric
-    - precise
-    - quantal
-    - raring
-    - saucy
-    - trusty
+    - xenial
   #- name: SLES
   #  versions:
   #  - all
@@ -82,8 +78,8 @@ galaxy_info:
   #  - etch
   #  - lenny
   #  - squeeze
-    - wheezy
-    - jessie
+    - buster
+
   #
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.

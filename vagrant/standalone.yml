@@ -1,6 +1,7 @@
 # Default playbook to install uchiwa on vanilla box
 
 - hosts: all
+  become: true
   roles:
     - role: uchiwa
 
