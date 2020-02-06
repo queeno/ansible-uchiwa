@@ -18,7 +18,7 @@
     "host": "{{ host }}",
     "port": {{ port }},
     "user": "{{ user }}",
-    "pass": "{{ pass }}",
+    "pass": "{{ passwd }}",
     "refresh": {{ refresh }}{{ ',' if users or auth else '' }}
 {% if users %}
     "users": [
